@@ -1,10 +1,9 @@
-module Controller (clk, rst, start, Y0Yminus1, co, done, ldX, ldY, ldA, initA, initYminusOne,
+module Controller (clk, rst, start, Y0Yminus1, done, ldX, ldY, ldA, initA, initYminusOne,
 			 aBarS, shRA, shRY, ldYminusOne, selR, selL);
 input clk;
 input rst;
 input start;
 input [1:0] Y0Yminus1;
-input co;
 output done;
 output ldX;
 output ldY;
