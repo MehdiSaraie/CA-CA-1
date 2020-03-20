@@ -31,7 +31,7 @@ output reg selL;
 		Init1: ns = Init2;
 		Init2: ns = Check;
 		Check: ns = (Y0Yminus1 == 2'b01)? Add:
-			    (Y0Yminus1 == 2'b01)? Sub: Shift;
+			    (Y0Yminus1 == 2'b10)? Sub: Shift;
 		Add: ns = Shift;
 		Sub: ns = Shift;
 		Shift: ns = co? Exp1: Check;
@@ -42,19 +42,16 @@ output reg selL;
 	end
 
 	always @(ps) begin
-		{done, ldX, ldY, initA, initC, initYminusOne,
+		{done, ldX, ldY, ldA, initA, initC, initYminusOne,
 			aBarS, shRA, shRY, icC, ldYminusOne, selR, selL} = 13'b0;
 		case (ps)
-		Idle: ;
 		Init1: {ldX, initA, initC, initYminusOne} = 4'b1111;
 		Init2: ldY = 1'b1;
-		Check: ;
 		Add: {aBarS, ldA} = 2'b01;
 		Sub: {aBarS, ldA} = 2'b11;
 		Shift: {shRA, icC, shRY, ldYminusOne} = 4'b1111;
 		Exp1: {done, selL} = 2'b11;
 		Exp2:{done, selR} = 2'b11;
-		default: ;
 		endcase
 	end
 
