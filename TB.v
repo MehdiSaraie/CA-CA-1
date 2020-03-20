@@ -152,6 +152,7 @@ reg [11:0] result;
 		#247 clk = 0;
 		$display("result is: %d", result);
 
+		$stop;
 	end
 
 endmodule
