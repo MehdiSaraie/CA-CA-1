@@ -34,6 +34,7 @@ output [5:0] outBus;
 		.rst(rst),
 		.inBus(inBus),
 		.outBus(outBus),
+		.Y0Yminus1(Y0Yminus1),
 		.ldX(ldX),
 		.ldY(ldY),
 		.ldA(ldA), 
