@@ -60,7 +60,7 @@ output [5:0]outBus;
 		.out(YminusOne)
 		);
 	adder adder (
-		.sel(aBarS),
+		.aBarS(aBarS),
 		.A(Aout),
 		.B(Xout),
 		.C(res)
@@ -77,4 +77,3 @@ output [5:0]outBus;
 		);
 	assign Y0YminusOne={Y0,YminusOne};
 endmodule
-
