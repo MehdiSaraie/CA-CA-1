@@ -65,12 +65,12 @@ output [5:0]outBus;
 		.B(Xout),
 		.C(res)
 		);
-	bufif6 buf6 (
+	bufif6 buf6L (
 		.sel(selL),
 		.in(Aout),
 		.out(outBus)
 		);
-	bufif6 buf6 (
+	bufif6 buf6R (
 		.sel(selR),
 		.in(Yout),
 		.out(outBus)
