@@ -1,4 +1,4 @@
-module datapath(clk, rst, ldX, ldY, ldA, initA, initYminusOne,aBarS, shRA, shRY, ldYminusOne, selR, selL,inBus, Y0Yminus1, outBus);
+module Datapath(clk, rst, ldX, ldY, ldA, initA, initYminusOne,aBarS, shRA, shRY, ldYminusOne, selR, selL,inBus, Y0Yminus1, outBus);
 input clk;
 input rst;
 input ldX;
@@ -59,18 +59,18 @@ output [5:0]outBus;
 		.in(Y0),
 		.out(Yminus1)
 		);
-	adder(
+	adder adder (
 		.sel(aBarS),
 		.A(Aout),
 		.B(Xout),
 		.C(res)
 		);
-	bufif6(
+	bufif6 buf (
 		.sel(selL),
 		.in(Aout),
 		.out(outBus)
 		);
-	bufif6(
+	bufif6 buf (
 		.sel(selR),
 		.in(Yout),
 		.out(outBus)
