@@ -1,9 +1,9 @@
-module StateMachine (clk, rst, start, Y0Yminus1, co, done, ldX, ldY, ldA, initA, initC, initYminusOne,
+module StateMachine (clk, rst, start, Y0YminusOne, co, done, ldX, ldY, ldA, initA, initC, initYminusOne,
 			 aBarS, shRA, shRY, icC, ldYminusOne, selR, selL);
 input clk;
 input rst;
 input start;
-input [1:0] Y0Yminus1;
+input [1:0] Y0YminusOne;
 input co;
 output reg done;
 output reg ldX;
@@ -30,8 +30,8 @@ output reg selL;
 		Idle: ns = start? Init1: Idle;
 		Init1: ns = Init2;
 		Init2: ns = Check;
-		Check: ns = (Y0Yminus1 == 2'b01)? Add:
-			    (Y0Yminus1 == 2'b10)? Sub: Shift;
+		Check: ns = (Y0YminusOne == 2'b01)? Add:
+			    (Y0YminusOne == 2'b10)? Sub: Shift;
 		Add: ns = Shift;
 		Sub: ns = Shift;
 		Shift: ns = co? Exp1: Check;

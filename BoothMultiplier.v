@@ -6,7 +6,7 @@ output done;
 input [5:0] inBus;
 output [5:0] outBus;
 
-	wire [1:0] Y0Yminus1;
+	wire [1:0] Y0YminusOne;
 	wire ldX, ldY, ldA, initA, initYminusOne;
 	wire aBarS, shRA, shRY, ldYminusOne, selR, selL;
 
@@ -15,7 +15,7 @@ output [5:0] outBus;
 		.rst(rst),
 		.start(start),
 		.done(done),
-		.Y0Yminus1(Y0Yminus1),		
+		.Y0YminusOne(Y0YminusOne),		
 		.ldX(ldX),
 		.ldY(ldY),
 		.ldA(ldA), 
@@ -34,7 +34,7 @@ output [5:0] outBus;
 		.rst(rst),
 		.inBus(inBus),
 		.outBus(outBus),
-		.Y0Yminus1(Y0Yminus1),
+		.Y0YminusOne(Y0YminusOne),
 		.ldX(ldX),
 		.ldY(ldY),
 		.ldA(ldA), 
